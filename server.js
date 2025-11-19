@@ -1,7 +1,13 @@
+
+// Força Node a usar IPv4 primeiro
+require('dns').setDefaultResultOrder('ipv4first');
+
 // server.js
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
+const ipLogger = require('./src/middlewares/ipLogger');
+
 require('dotenv').config();
 
 // Carrega a configuração do banco de dados e a classe CustomError
@@ -15,6 +21,8 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
+app.use(ipLogger);
+
 
 // Rota de health check
 app.get('/', (req, res) => {
