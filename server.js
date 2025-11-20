@@ -23,13 +23,22 @@ app.use(helmet());
 app.use(express.json());
 app.use(ipLogger);
 
+// --- Swagger Documentation ---
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./src/config/swagger');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+  customCss: '.swagger-ui .topbar { display: none }',
+  customSiteTitle: 'Event Manager API Documentation'
+}));
 
 // Rota de health check
 app.get('/', (req, res) => {
   res.json({ 
     success: true, 
     message: "Event Management API - Online",
-    version: "1.0.0"
+    version: "1.0.0",
+    docs: "/api-docs"
   });
 });
 
