@@ -79,6 +79,7 @@ describe('EventController - createEvent', () => {
     // Teste para updateEvent
     it('deve retornar 403 se o usuário tentar atualizar evento que não criou', async () => {
         // Arrange
+        req.params = { id: 100 };
         const existingEvent = { id: 100, creator_id: 99, update: jest.fn() };
         db.Event.findByPk.mockResolvedValue(existingEvent);
 
@@ -86,6 +87,7 @@ describe('EventController - createEvent', () => {
         await EventController.updateEvent(req, res, next);
 
         // Assert
+        expect(db.Event.findByPk).toHaveBeenCalledWith(100);
         expect(next).toHaveBeenCalledWith(expect.objectContaining({
             message: 'Você não tem permissão para atualizar este evento.',
             status: 403
