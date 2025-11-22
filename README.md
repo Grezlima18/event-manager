@@ -53,5 +53,18 @@ Observação: ao usar Neon/Provedores que exigem SSL, o projeto já habilita `ss
 
 Substitua o placeholder acima pelo link do serviço em que a API estiver hospedada (por exemplo, Heroku, Railway, Render, Vercel com backend, Azure, etc.).
 
+## *Sequência Recomendada para Testar no Postman:*
+
+1. *Registrar usuário* (POST /auth/register)
+2. *Login* (POST /auth/login) - *SALVAR O TOKEN*
+3. *Criar local* (POST /locations) - usar token
+4. *Criar evento* (POST /events) - usar token
+5. *Comprar ingresso* (POST /tickets) - usar token
+6. *Listar tudo* (GET /events, /locations, /tickets)
+
+*Headers para rotas protegidas:*
+Authorization: Bearer seu_token_jwt
+Content-Type: application/json
+
 ---
 Se precisar, atualize este README com instruções específicas do provedor de nuvem escolhido (variáveis de ambiente, build/start commands, etc.).
