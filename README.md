@@ -49,7 +49,7 @@ Observação: ao usar Neon/Provedores que exigem SSL, o projeto já habilita `ss
   npm test
 
 ## Deploy (link funcional da API na nuvem)
-- Link do deploy funcional: <COLE_AQUI_O_LINK_DO_DEPLOY>
+- Link do deploy funcional: [<COLE_AQUI_O_LINK_DO_DEPLOY>](https://event-manager-8k0q.onrender.com/api/v1/)
 
 Substitua o placeholder acima pelo link do serviço em que a API estiver hospedada (por exemplo, Heroku, Railway, Render, Vercel com backend, Azure, etc.).
 
