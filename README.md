@@ -32,10 +32,10 @@
 
 Exemplo mínimo de arquivo `.env`:
 
-PORT=3000
-DATABASE_URL=postgres://usuario:senha@host:5432/nome_do_banco
-JWT_SECRET=sua_chave_secreta
-NODE_ENV=development
+- PORT=3000
+- DATABASE_URL=postgres://usuario:senha@host:5432/nome_do_banco
+- JWT_SECRET=sua_chave_secreta
+- NODE_ENV=development
 
 Observação: ao usar Neon/Provedores que exigem SSL, o projeto já habilita `ssl` e `rejectUnauthorized: false` nas opções do Sequelize.
 
@@ -61,8 +61,8 @@ Observação: ao usar Neon/Provedores que exigem SSL, o projeto já habilita `ss
 6. *Listar tudo* (GET /events, /locations, /tickets)
 
 *Headers para rotas protegidas:*
-Authorization: Bearer seu_token_jwt
-Content-Type: application/json
+- Authorization: Bearer seu_token_jwt
+- Content-Type: application/json
 
 ---
 
