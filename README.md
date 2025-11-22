@@ -51,8 +51,6 @@ Observação: ao usar Neon/Provedores que exigem SSL, o projeto já habilita `ss
 ## Deploy (link funcional da API na nuvem)
 - Link do deploy funcional: https://event-manager-8k0q.onrender.com/api/v1/
 
-Substitua o placeholder acima pelo link do serviço em que a API estiver hospedada (por exemplo, Heroku, Railway, Render, Vercel com backend, Azure, etc.).
-
 ## *Sequência Recomendada para Testar no Postman:*
 
 1. *Registrar usuário* (POST /auth/register)
@@ -67,4 +65,4 @@ Authorization: Bearer seu_token_jwt
 Content-Type: application/json
 
 ---
-Se precisar, atualize este README com instruções específicas do provedor de nuvem escolhido (variáveis de ambiente, build/start commands, etc.).
+
